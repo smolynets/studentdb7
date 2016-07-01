@@ -1,0 +1,93 @@
+{% extends "students/base.html" %}
+{% load static from staticfiles %}
+{% block meta_title %}Студенти{% endblock meta_title %}
+{% block title %}База Студентів{% endblock title %}
+{% block content %}
+
+<!start main page>
+         <div class="row" id="content-columns">
+          <div class="col-xs-12" id="content-column">
+             <h2>Групи</h2>
+             <!add student button>
+             <a class="btn btn-primary" href="#" role="button" id="edd">Додати групу</a>
+         </div>
+         </div>
+         <!start table of students>
+        <table class="table">
+
+{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+<thead>
+<tr>
+<th>
+<a href="{% url "groups" %}?order_by=#{% if order_by == '#' and reverse != '1' %}&amp;reverse=1{% endif %}">
+#
+{% if order_by == '#' and reverse != '1' %}&uarr;
+{% elif order_by == '#' and reverse == '1' %}&darr;
+{% endif %}
+</a>
+</th>
+<th>
+<a href="{% url "groups" %}?order_by=group_name{% if order_by == 'group_name' and reverse != '1' %}&amp;reverse=1{% endif %}">
+Група
+{% if order_by == 'group_name' and reverse != '1' %}&uarr;
+{% elif order_by == 'group_name' and reverse == '1' %}&darr;
+{% endif %}
+</a>
+</th>
+<th>
+<a href="{% url "groups" %}?order_by=leader{% if order_by == 'leader' and reverse != '1' %}&amp;reverse=1{% endif %}">
+Староста
+{% if order_by == 'leader' and reverse != '1' %}&uarr;
+{% elif order_by == 'leader' and reverse == '1' %}&darr;
+{% endif %}
+</a>
+</th>
+<th>Дії</th>
+</tr>
+</thead>
+{% endwith %}
+
+<tbody>
+{% for group in groups %}
+<tr>
+<td>{{ forloop.counter }}</td>
+<td>{{ group.title }}</td>
+<td>{{ group.leader }}</td>
+<td>
+<div class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle"
+data-toggle="dropdown">Дія
+<span class="caret"></span>
+</button>
+<ul class="dropdown-menu" role="menu">
+<li><a href="{% url "groups_edit" group.id %}">Редагувати</a></li>
+<li><a href="vid{{ student.id }}">Відвідування</a></li>
+<li><a href="{% url "groups_delete" group.id %}">Видалити</a></li>
+</ul>
+</div>
+</td>
+{% endfor %}
+</tbody>
+</table>
+         {% if groups.has_other_pages %}
+{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+<nav>
+<ul class="pagination">
+<li>
+<a href="{% url "groups" %}?page=1&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">&laquo;</a>
+</li>
+{% for p in groups.paginator.page_range %}
+<li {% if groups.number == p %}class="active"{% endif %}>
+<a href="{% url "groups" %}?page={{ p }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">{{ p }}</a>
+</li>
+{% endfor %}
+<li>
+<a href="{% url "groups" %}?page={{ groups.paginator.num_pages}}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">
+&raquo;</a>
+</li>
+</ul>
+</nav>
+{% endwith %}
+{% endif %}
+
+{% endblock content %}

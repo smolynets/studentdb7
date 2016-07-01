@@ -1,0 +1,117 @@
+[
+{
+    "fields": {
+        "username": "oleh",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2016-07-01T19:53:21.006Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$kRserEgmUjmY$zfvm3M891u2jHPG3NYtOTgyXgr/kJ50ZYFMnH3Gkm0A=",
+        "email": "smolynets@gmail.com",
+        "date_joined": "2016-07-01T19:53:08.502Z"
+    },
+    "model": "auth.user",
+    "pk": 2
+},
+{
+    "fields": {
+        "expire_date": "2016-07-15T20:21:11.521Z",
+        "session_data": "YmE5MGUyN2VkMTgzOTgwODE3YWQwYjc2NTk4OGM1MzRkYzIwNDMyZTp7fQ=="
+    },
+    "model": "sessions.session",
+    "pk": "545bqijydicy6od3m01gk75lhqbujby6"
+},
+{
+    "fields": {
+        "expire_date": "2016-07-15T20:21:31.126Z",
+        "session_data": "YmE5MGUyN2VkMTgzOTgwODE3YWQwYjc2NTk4OGM1MzRkYzIwNDMyZTp7fQ=="
+    },
+    "model": "sessions.session",
+    "pk": "8omy608lvitcla68m54wd7n9fahzm572"
+},
+{
+    "fields": {
+        "expire_date": "2016-07-15T19:53:21.073Z",
+        "session_data": "ZTRjMTM2MzNmMjkxMDU4ZGJiNmNmMWQzODRkMDM4ZGU2ZWUzZGExOTp7Il9hdXRoX3VzZXJfaGFzaCI6ImExMDE4YWIxNWJkYjEyZTQ1Yzk4OTdmOGIzYWI2OGUzNDNiOWQ4NWMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjJ9"
+    },
+    "model": "sessions.session",
+    "pk": "9slopd9bko2hu34305lsdclblayvi3ab"
+},
+{
+    "fields": {
+        "first_name": "\u0414\u043e\u043a\u0442\u043e\u0440",
+        "last_name": "\u0425\u0430\u0443\u0437",
+        "middle_name": "",
+        "student_group_id": 6,
+        "photo": "",
+        "notes": "",
+        "birthday": "2016-07-01",
+        "ticket": "2"
+    },
+    "model": "students.student",
+    "pk": 1
+},
+{
+    "fields": {
+        "first_name": "dfd",
+        "last_name": "dffd",
+        "middle_name": "",
+        "student_group_id": 6,
+        "photo": "",
+        "notes": "",
+        "birthday": "2016-07-01",
+        "ticket": "8"
+    },
+    "model": "students.student",
+    "pk": 2
+},
+{
+    "fields": {
+        "notes": "",
+        "leader": null,
+        "title": "MTM"
+    },
+    "model": "students.group",
+    "pk": 6
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2016-07-01T20:10:17.333Z",
+        "object_repr": "\u0414\u043e\u043a\u0442\u043e\u0440 \u0425\u0430\u0443\u0437",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "oleh"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 19
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2016-07-01T20:12:38.513Z",
+        "object_repr": "dfd dffd",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "oleh"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 20
+}
+]
