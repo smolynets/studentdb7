@@ -1,5 +1,5 @@
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DATABASES = {
     # 'default': {
@@ -7,10 +7,11 @@ DATABASES = {
     #     'NAME': os.path.join(BASE_DIR, '..', 'db.sqlite3'),
     # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydb1',
+        'USER': 'oleh1',
+        'PASSWORD': '0000',
         'HOST': 'localhost',
-        'USER': 'students_db_user',
-        'PASSWORD': 'password',
-        'NAME': 'students_db',
+        'PORT': '',
     }
 }
